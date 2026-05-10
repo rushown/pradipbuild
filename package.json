@@ -1,0 +1,36 @@
+{
+  "name": "pradipbuild",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "groq-sdk": "^0.7.0",
+    "pdf-parse": "^1.1.1",
+    "mammoth": "^1.8.0",
+    "react-dropzone": "^14.3.5",
+    "framer-motion": "^11.15.0",
+    "react-to-print": "^3.0.2",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "date-fns": "^4.1.0",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/pdf-parse": "^1.1.4",
+    "typescript": "^5",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0"
+  }
+}
