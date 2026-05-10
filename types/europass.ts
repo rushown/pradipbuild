@@ -166,3 +166,41 @@ export interface CvSummary {
 
 export type AppStep = 'upload' | 'analysing' | 'select_mode' | 'generating' | 'review'
 export type ActiveTab = 'europass' | 'cover_letter' | 'cv_summary'
+
+
+// ── AI Guide / Coach ─────────────────────────────────────────────────────────
+
+export interface GuideAction {
+  id: string
+  priority: 'critical' | 'high' | 'medium' | 'low'
+  section: string
+  title: string
+  description: string
+  howTo: string
+  ctaLabel?: string
+  ctaTarget?: string  // tab name to jump to
+}
+
+export interface AIGuide {
+  stepSummary: string
+  completenessScore: number   // 0-100
+  actions: GuideAction[]
+  nextStep: string
+  encouragement: string
+}
+
+// ── Photo ────────────────────────────────────────────────────────────────────
+
+export interface PhotoState {
+  dataUrl: string | null
+  fileName: string | null
+}
+
+// ── CV Completeness ──────────────────────────────────────────────────────────
+
+export interface CompletenessSection {
+  key: string
+  label: string
+  score: number   // 0-100
+  missing: string[]
+}
