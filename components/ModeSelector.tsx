@@ -47,12 +47,14 @@ const MODES: {
 ]
 
 export default function ModeSelector({ report, onSelect, loading }: ModeSelectorProps) {
-  const [selected, setSelected] = useState<GenerationMode>(report.recommendedMode ?? 'europass')
+  const [selected, setSelected] = useState<GenerationMode>(report?.recommendedMode ?? 'europass')
   const [jobTitle, setJobTitle] = useState('')
   const [company, setCompany] = useState('')
   const [jobDescription, setJobDescription] = useState('')
   const [country, setCountry] = useState('')
   const [recipientName, setRecipientName] = useState('')
+
+  if (!report) return null
 
   const selectedMode = MODES.find((m) => m.key === selected)!
 

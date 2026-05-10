@@ -78,6 +78,7 @@ pradipbuild/
 │   └── api/
 │       ├── parse/route.ts    # File → text extraction (PDF, DOCX, TXT, JSON)
 │       ├── analyse/route.ts  # Document classification & intelligence report
+│       ├── guide/route.ts
 │       ├── generate/route.ts # Europass CV generation (JSON output)
 │       ├── cover-letter/     # Cover letter generation
 │       └── cv-summary/       # Career analysis report
@@ -85,6 +86,14 @@ pradipbuild/
 │   ├── FileUpload.tsx        # Drag-and-drop file upload
 │   ├── IntelligencePanel.tsx # Document classification results display
 │   ├── ModeSelector.tsx      # Generation mode picker (Europass / Cover / Summary)
+│   ├── PhotoUpload.tsx  
+│   ├── AIGuidePanel.tsx  
+│   ├── CompletenessBar.tsx  
+│   ├── CoverLetterBuilder.tsx
+│   ├── IntegrationsPanel.tsx
+│   ├── IntelligencePanel.tsx
+│   ├── ModeSelector.tsx
+│   ├── FileUpload.tsx
 │   ├── EditorPanel.tsx       # Inline CV editor (tabbed sections)
 │   ├── EuropassPreview.tsx   # Pixel-perfect Europass CV renderer
 │   ├── CoverLetterPreview.tsx # Europass cover letter renderer
