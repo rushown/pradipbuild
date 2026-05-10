@@ -47,7 +47,11 @@ const MODES: {
 ]
 
 export default function ModeSelector({ report, onSelect, loading }: ModeSelectorProps) {
-  const [selected, setSelected] = useState<GenerationMode>(report?.recommendedMode ?? 'europass')
+  const [selected, setSelected] = useState<GenerationMode>(
+    MODES.find((m) => m.key === report?.recommendedMode)
+      ? (report.recommendedMode as GenerationMode)
+      : 'europass'
+  )
   const [jobTitle, setJobTitle] = useState('')
   const [company, setCompany] = useState('')
   const [jobDescription, setJobDescription] = useState('')
@@ -56,7 +60,7 @@ export default function ModeSelector({ report, onSelect, loading }: ModeSelector
 
   if (!report) return null
 
-  const selectedMode = MODES.find((m) => m.key === selected)!
+  const selectedMode = MODES.find((m) => m.key === selected) ?? MODES[0]
 
   return (
     <div style={{ maxWidth: 680, margin: '0 auto' }}>
