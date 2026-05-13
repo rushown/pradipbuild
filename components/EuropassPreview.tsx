@@ -191,7 +191,7 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Personal Statement */}
       {cv.personalStatement && (
-        <div style={{ ...S.section, background: '#f0f4ff', padding: '12px 14px', borderRadius: 4, borderLeft: '3px solid #003399' }}>
+        <div data-pdf-section style={{ ...S.section, background: '#f0f4ff', padding: '12px 14px', borderRadius: 4, borderLeft: '3px solid #003399' }}>
           <p style={{ fontSize: 11, color: '#1e3a5f', lineHeight: 1.6, fontStyle: 'italic' }}>
             {cv.personalStatement}
           </p>
@@ -200,12 +200,12 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Work Experience */}
       {cv.workExperience?.length > 0 && (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}>
             <span>💼</span> Work Experience
           </div>
           {cv.workExperience.map((w) => (
-            <div key={w.id} style={S.row}>
+            <div key={w.id} data-pdf-section style={S.row}>
               <div style={S.dateCol}>
                 <div style={{ fontWeight: 600 }}>{w.startDate} – {w.current ? 'Present' : w.endDate}</div>
                 <div>{w.city}, {w.country}</div>
@@ -228,10 +228,10 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Education */}
       {cv.education?.length > 0 && (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}><span>🎓</span> Education and Training</div>
           {cv.education.map((e) => (
-            <div key={e.id} style={S.row}>
+            <div key={e.id} data-pdf-section style={S.row}>
               <div style={S.dateCol}>
                 <div style={{ fontWeight: 600 }}>{e.startDate} – {e.current ? 'Present' : e.endDate}</div>
                 <div>{e.city}, {e.country}</div>
@@ -250,10 +250,10 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Languages */}
       {cv.languages?.length > 0 && (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}><span>🌐</span> Language Skills</div>
           {cv.languages.map((lang) => (
-            <div key={lang.language} style={{ marginBottom: 14, paddingBottom: 14, borderBottom: '1px solid #f3f4f6' }}>
+            <div key={lang.language} data-pdf-section style={{ marginBottom: 14, paddingBottom: 14, borderBottom: '1px solid #f3f4f6' }}>
               <div style={{ fontWeight: 600, fontSize: 12, marginBottom: 2 }}>{lang.language}</div>
               <CEFRGrid
                 listening={lang.listening}
@@ -273,7 +273,7 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Digital Skills */}
       {cv.digitalSkills?.length > 0 && (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}><span>💻</span> Digital Skills</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 0 }}>
             {cv.digitalSkills.map((d, i) => (
@@ -289,7 +289,7 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Other Skills */}
       {cv.otherSkills?.length > 0 && (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}><span>✦</span> Other Skills</div>
           {cv.otherSkills.map((s, i) => (
             <div key={i} style={{ marginBottom: 8 }}>
@@ -302,7 +302,7 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Driving */}
       {cv.drivingLicense?.length ? (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}><span>🚗</span> Driving Licence</div>
           <div>Category {cv.drivingLicense.join(', ')}</div>
         </div>
@@ -310,7 +310,7 @@ export default function EuropassPreview({ cv, printRef }: EuropassPreviewProps) 
 
       {/* Additional Info */}
       {cv.additionalInfo && (
-        <div style={S.section}>
+        <div data-pdf-section style={S.section}>
           <div style={S.sectionTitle}><span>ℹ</span> Additional Information</div>
           <p style={{ fontSize: 11 }}>{cv.additionalInfo}</p>
         </div>
